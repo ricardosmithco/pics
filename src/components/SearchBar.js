@@ -1,16 +1,15 @@
 import React from 'react';
 
 class SearchBar extends React.Component{
-    onInputChange(event){
-        console.log(event.target.value);
-    }
+    state = { term: '' };
 
     render(){
         return ( 
         <div className="ui segment">
             <form className="ui form">
                 <div className="field">
-                    <input type="text" onChange={this.onInputChange}/> 
+                    <input type="text" value ={this.state.term} 
+                    onChange={(event) => this.setState({ term: event.target.vlaue })}/> 
                 </div>
             </form>
         </div>); // notice line 11: we did not put a set of parenthesis on this.onInputChange. 
