@@ -9,7 +9,7 @@ class App extends React.Component {
 
     onSearchSubmit = (term) => {
         unsplash.get('search/photos/', {
-            params: {query: term},
+            params: {query: term, per_page: 15},
             
         }).then((response) =>{
             console.log(this)
